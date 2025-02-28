@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Presupuesto</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Shepherd.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.0.0/dist/css/shepherd.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Presupuesto</h1>
+
+        <label>💰 Ingreso Mensual:</label>
+        <input type="number" id="ingreso" placeholder="Ingresa tu salario mensual">
+
+        <h2>Servicios Generales</h2>
+        <div id="servicios">
+            <div class="gasto">
+                <input type="text" placeholder="Servicio (Ej: Luz)" class="nombre">
+                <input type="number" placeholder="Monto" class="monto">
+                <button class="eliminar" onclick="eliminarGasto(this)">❌</button>
+            </div>
+        </div>
+        <button onclick="agregarServicio()">➕ Agregar Servicio</button>
+
+        <h2>Gastos Aparte</h2>
+        <div id="gastosApartes">
+            <div class="gasto">
+                <input type="text" placeholder="Gasto (Ej: Comida)" class="nombre">
+                <input type="number" placeholder="Monto" class="monto">
+                <button class="eliminar" onclick="eliminarGasto(this)">❌</button>
+            </div>
+        </div>
+        <button onclick="agregarGasto()">➕ Agregar Gasto</button>
+
+        <button class="calcular" onclick="calcular()">💰 Calcular</button>
+
+        <h2>Resultados</h2>
+        <p>Total Gastos: <span id="totalGastos">0</span> 💸</p>
+        <div id="resultadoFinal">
+            <span>Saldo Restante: 0</span>
+        </div>
+        
+    </div>
+
+    <!-- Shepherd.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.0.0/dist/js/shepherd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
